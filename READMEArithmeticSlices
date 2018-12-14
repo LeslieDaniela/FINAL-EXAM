@@ -1,0 +1,44 @@
+Arithmetic Slices
+
+RECURSIVELY: 
+The pattern that the algorithm uses to solve the problem is composed of a recursive method that subtracts the quantities of the array in a specific pattern. The int [] array is taken as the main array containing the list of integers, and to check whether the list is arithmetic the algorithm will initialize index i at the position 2 to avoid negative solutions.
+
+For example:
+
+Int [ ] array = {1, 3, 5, 7, 9}
+
+….for loop… 
+
+int i = 2;
+ array[ i ] - array[ i – 1 ] =   2	-> 	POSITIVE SOLUTION
+          5         -          3       =   2
+
+
+AND NOT…
+
+Index i = 0;
+ array[ i ] - array[ i + 1 ] =   -2	->	NEGATIVE SOLUTION
+          1         -         3        =   -2
+
+The structure will move from right to left starting at an i+1 position for the first integer and subtracting the i position from it. The next portion will consist of checking equivalence in between the first operation and the operation between the i+1 position and the i+2 proceeding integers.
+
+For example:
+
+Int [ ] array = {1, 3, 5, 7, 9}
+
+array[ i ] - array[ i – 1 ]		->	FIRST OPERATION
+         5         -          3         =        2
+
+array[ i - 1] - array[ i – 2 ]	->	SECOND OPERATION
+          3         -          1         =        2
+
+NOTE: Both operations should be equivalent to be considered an arithmetic list of integers.
+
+STRUCTURE: 
+
+[Array Storing Solutions]
+The last step that brings the recursive algorithm together is the use of an array named store, this int [ ] store will store the number of arithmetic slices and finally add them to the variable sum which will return the total amount of operations that are considered arithmetic within the int [ ] array. 
+
+[Overall Structure]
+The program will contain two arrays one of them containing the integers (int [ ] array), and the other the arithmetic slices (int [ ] store), the other two variables will be int i to initialize the index position within the array’s (both int [ ] array and int [ ] store) , and the int sum which will serve to store the arithmetic operations in form of an integer and return the total.
+
