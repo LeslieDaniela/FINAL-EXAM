@@ -1,0 +1,13 @@
+public class ArithmeticSlices {
+  public int numberOfArithmeticSlices(int[] array){
+    int[] store = new int[array.length];
+    int sum = 0;
+    for (int i = 2; i < store.length; i++) {
+      if (array[i] - array[i - 1] == array[i - 1] - array[i - 2]){
+        store[i] = 1 + store[i - 1];
+        sum += store[i];
+      }
+    }
+    return sum;
+  }
+}
