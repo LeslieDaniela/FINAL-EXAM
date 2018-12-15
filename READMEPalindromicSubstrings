@@ -1,0 +1,25 @@
+Palindromic Substrings
+
+RECURSIVELY: 
+The part of the program that uses recursion is the array [ ][ ] subString that stores the values of the characters from the String s. If the string is empty then the array subString [ i ][ j ] remains at a zero count, if not then it proceeds to check the string form both ends.
+
+For example:
+
+if(subString[ i + 1 ][ j - 1 ] && s.charAt( i ) == s.charAt( j ))
+
+This line of code is using the array [ ][ ] subString and it is storing variables i and j, where i is the first index position at the left of the string and the j is the end index position of the string. The characters are both compared and the i and j position are incremented and decremented in accordance to their positions in the string. 
+
+
+STRUCTURE:
+ 
+[Array Storing Solutions]
+The program uses an array Boolean [ ][ ] subString that stores the values of i and j which are positions representing characters in the String s. Using dynamic programming allows us to store the variables within the array and use them in different variations saving lines of extra code. By calling the array we can use it to compare, and increment position indexes.
+
+[Overall Structure]
+
+The program takes a String s as the main parameter, and then initializes a variable count that keeps track of the substrings within the string. The first method consists of checking whether the string is null or equal to 0 and if it is it returns the count which is 0. After, a Boolean array subString is initialized as well as a variable integer i at position zero which is incremented if it is under the length of the string and the program reuses the variable i in the proceeding method to check the characters after the initial value. 
+
+
+
+
+
