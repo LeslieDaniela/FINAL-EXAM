@@ -34,6 +34,7 @@ array[ i - 1] - array[ i – 2 ]	->	SECOND OPERATION
 
 NOTE: Both operations should be equivalent to be considered an arithmetic list of integers.
 
+
 STRUCTURE: 
 
 [Array Storing Solutions]
@@ -41,4 +42,3 @@ The last step that brings the recursive algorithm together is the use of an arra
 
 [Overall Structure]
 The program will contain two arrays one of them containing the integers (int [ ] array), and the other the arithmetic slices (int [ ] store), the other two variables will be int i to initialize the index position within the array’s (both int [ ] array and int [ ] store) , and the int sum which will serve to store the arithmetic operations in form of an integer and return the total.
-
