@@ -1,0 +1,20 @@
+import java.util.*;
+
+class MaximumLengthOfPairChain{
+  public int findLongestChain(int [][] pairs){
+    Arrays.sort(pairs, (a, b) -> a[0] - b[0]);
+    int n = pairs.length;
+    int [] chainStore = new int[n];
+    Arrays.fill(chainStore, 1);
+    
+    for (int j = 1; j < n; ++j){
+      for (int i = 0; i < j; ++i){
+        if (pairs[i][1] < pairs[j][0])
+          chainStore[j] = Math.max(chainStore[j], chainStore[i] + 1);
+      }
+    }
+    int answer = 0;
+    for (int x: chainStore) if (x > answer) answer = x;
+    return answer;
+  }
+}
