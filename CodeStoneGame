@@ -1,0 +1,17 @@
+class StoneGame {
+  public boolean stoneGame(int[] piles){
+    int n = piles.length;        
+    int [][] scores = new int[n+2][n+2];
+    for (int size = 1; size <= n; ++size){
+      for (int i = 0; i + size <= n; ++i) {
+        int j = i + size - 1;
+        int equals = (j + i + n) % 2;
+        if (equals == 1)
+          scores[i+1][j+1] = Math.max(piles[i] + scores[i+2][j+1], piles[j] + scores[i+1][j]);
+        else
+          scores[i+1][j+1] = Math.min(-piles[i] + scores[i+2][j+1], -piles[j] + scores[i+1][j]);
+      }
+      return scores[1][n] > 0;
+    }
+  }
+}
