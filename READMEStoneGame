@@ -25,17 +25,11 @@ PLAYER TWO:
 score [ i + 1 ][ j + 1] = Math.min(-piles [ i ] + score [ i + 2 ][ j + 1 ], -piles [ j ] + score [ i + 1 ][ j ]
 //WOULD FIND MINIMUM OF EITHER PILE CHOSEN 
 
+
 STRUCTURE:
 
-Array Storing Solutions
+[Array Storing Solutions]
 The array that serves as a storing data structure stores the variables within the program in the array int [ ] score which serves as a score keeper in link with the original array int [ ] piles. The algorithm goes through the array of integer piles and checks the highest combinations as well as the lowest combinations depending on the turn of the player, then after finding either or it will add the highest combinations to the array store.
 
-Overall Structure
-
+[Overall Structure]
 The program will contain two arrays one of them containing the integer (int [ ] piles) piles, and the other the scores of players one and two (int [ ] score), the other variable will be int n that serves as the integer form of the array piles’ length. Variable equals will check the chosen index i plus index j plus the length of the array piles and module it by 2 to check whether the combinations of piles chosen have a remainder of one. If the operations have a remainder of one the preceding operations will check the exact scores of both players to identify which one is the winner.   
-
-
-
-
-
-
