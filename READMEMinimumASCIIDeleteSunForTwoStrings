@@ -1,0 +1,29 @@
+Minimum ASCII Delete Sum For Two Strings
+
+RECURSIVELY: 
+The program uses the strategy of storing two string within one array that returns the value of its contents whether the arrays are empty, equal, or are different.
+
+For example:
+
+if (s1.charAt(i) == s2.charAt(j))
+
+meaning that if both the characters from string one and string two are equal, then the result will be...
+
+check[i][j] = check[i+1][j+1];
+
+meaning that there is no need for deletions and the result of the deleted characters in ASCII would be zero, which will be stored in check[ i ][ j ].
+
+Otherwise if the strings are not equal the algorithm will check for the minimum solution needed to equal both strings by removing characters
+
+check[i][j] = Math.min(check[i+1][j] + s1.codePointAt(i), check[i][j+1] + s2.codePointAt(j));
+
+then adding them to the array that stores the quantities check[ i ][ j ].
+
+STRUCTURE:
+ 
+[Array Storing Solutions]
+The program will take two strings as the main parameters but the data structure that will serve the dynamic programming purpose will be the array int [ ] [ ] check that will consistently check for specific relations between the strings one and two. The array check will return the opposite when the string checked is empty, it will also return 0 if both strings are equal, and it will also carry out the operations of checking for differences. This strategy minimizes and reuses the code, this case being the array int [ ][ ] check for different operations.
+
+[Overall Structure]
+
+The overall program will check whether either string one or two are empty at first, and if that is the case then it will return the opposite string as the answer is the number in ASCII of the letters needed to be removed for both strings to equal to equal each other, in this case those of the only string. The other case the program will check for is whether the strings are equal and if that’s the case then the program will simply return 0, as there are zero characters that need to be removed for the strings to equal each other. Lastly the case will check if the strings aren’t equal and if it’s true then we will check for the minimum amount of characters in ASCII code that need to be removed in order to make them equal and return the number.
