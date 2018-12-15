@@ -1,0 +1,37 @@
+Minimum Falling Path Sum
+
+RECURSIVELY: 
+The part of the program that acts recursively is the array [ ][ ] path that is used for different functions. The operations are similar but differ in variation as the problem asks to find the minimum combination path of sums of one chosen number per row.
+
+For example:
+
+Given grid…
+
+{[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9]}
+
+We would then use  the array path containing the rows and columns
+->	path[ row ][ column ]
+followed by a for loop that increments movement between the rows and columns and the Math.min method that check for either combination… 
+->	Math.min(best, path[ row + 1 ][ column - 1 ])
+For a column number to the left
+Or
+->	Math.min(best, path[ row + 1 ][ column + 1 ])
+For a column number to the right
+The best solution would be then added and returned as a single integer disregarding the array structure, which is stored in the variable answer.
+
+
+STRUCTURE:
+ 
+[Array Storing Solutions]
+The program uses an array int [ ] [ ] path that stores the variables of both the rows and the columns of the given grid. This array goes through all the integers in the grid pairing different sets of combinations either incrementing or decrementing on rows and columns working its way down one step at a time. 
+
+[Overall Structure]
+The overall structure consists of one array int [ ] [ ] path that serves as a storing data structure for the variables of the rows and the columns, the integer n is initialized to equal to the length of the array path and is later used within operations to compose results and comparisons. The integer best is initialized containing the quantities of the best minimum path solutions of the rows and columns that are stored in path. The last variable used is answer which has the minimum value of the sum of the numbers within the paths added stored, and it is returned at the end.
+
+
+
+
+
+
