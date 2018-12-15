@@ -1,0 +1,19 @@
+Maximum Length Of Pair Chain
+
+RECURSIVELY: 
+This program would recursively check the integers within the array incrementing to go through the rows and columns. The purpose of the problem is to return the longest chain of connectivity within the given integers of the original array grid called pairs. A secondary array chainStore is initialized to contain the integers as it scans stores and compares the pairs.
+
+For example:
+
+-> chainStore[j] = Math.max(chainStore[j], chainStore[i] + 1)
+
+This line of code uses the command Math.max which checks within its parameters what quantities are higher from the options given which are usually separated by a comma in this case either the integer at the position j or the integer at position i + 1 (integer after position i).
+
+
+STRUCTURE:
+ 
+[Array Storing Solutions]
+The array int [ ] chainStore will contain the rows and columns represented by i and j, within the program the chainStore at position i and j will be checked for Math.max meaning that it would look for the biggest number in this case the largest length of connectivity. The chainStore would contain the i and j index positions at any given location as there is a for loop before incrementing both index positions which would be stored in the array chainStore.
+
+[Overall Structure]
+The program takes the array int [ ][ ] pairs as the main parameter which is the array that contains pairs of numbers (rows and columns) of integers that will be checked for connectivity. First the pairs will be sorted by the first coordinate in this case meaning that they will be sorted according to the first number of every row. After sorting the rows and columns an integer n will be initialized which will contain the length of the array pair’s length size in form of integer, which will then be stored in the initialized array int [ ] chainStore that will contain the stored quantities of the pairs within the array [ ][ ] pairs. 
